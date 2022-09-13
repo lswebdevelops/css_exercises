@@ -3,14 +3,20 @@ div div{
   
 }
 .container{
-    display: grid;
+    display: inline-grid;
     /* grid-template-columns: 100px 70px 125px;
     grid-template-rows: 60px 35px;
     or just:
     */
-    grid-template: 60px 35px / 100px 70px;
+    grid-template: repeat(2, 35px) / repeat(3, 100px);
     /* if we add more rows after, and we don't know the quantity: so 
     for every row added, it will take the value of: */
-    grid-auto-rows: 45px;
+    /* grid-auto-rows: 45px; */
     /* grid-auto-flow: column >>> if we use this, every new live added will be a column */
+    grid-auto-flow: column ;
+    grid-auto-columns: 50px;
+    row-gap: 12px;
+    column-gap: 34px;
+    /* could also be :  */
+    /* gap: 34px; */
 }
