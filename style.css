@@ -1,58 +1,16 @@
-*{ box-sizing: border-box;
+div div{
+    border: solid firebrick 1px;
+  
 }
-
-body{
-    font-family: sans-serif;
-    margin: 0;
+.container{
     display: grid;
-    grid-template-columns: 30% auto;
-    grid-template-rows: 60px auto 60px;
-    grid-template-areas: "hd        hd"
-                         "sidebar main"   
-                         "footer footer"
-                                ;
-}
-
-header,
-aside,
-main,
-footer{
-    padding: 16px;
-    text-align: center;
-}
-header{
-    background-color: #521651;
-    grid-area: hd;
-}
-aside{
-    background-color: #fa923f;
-    grid-area: sidebar;
-
-}
-footer{
-    background-color: black;
-    grid-area: footer;
-
-}
-
-.navigation-list{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.navigation-item{
-    margin:0 10px;
-}
-.navigation-item a{
-    color: white;
-    text-decoration: none;
-}
-.navigation-item a:hover,
-.navigation-list a:active{
-    color: orange;
+    /* grid-template-columns: 100px 70px 125px;
+    grid-template-rows: 60px 35px;
+    or just:
+    */
+    grid-template: 60px 35px / 100px 70px;
+    /* if we add more rows after, and we don't know the quantity: so 
+    for every row added, it will take the value of: */
+    grid-auto-rows: 45px;
+    /* grid-auto-flow: column >>> if we use this, every new live added will be a column */
 }
