@@ -1,35 +1,31 @@
-div div{
-    border: solid firebrick 1px;
+div div {
+    border: solid black 1px;
+    padding: 5px;
+}
+h1{
+    color: orangered;
+    font-weight: bolder;
+    font-size: 3rem;
+    width:400px;
+    box-shadow: 1px 3px 4px 4px red;
+}
+  
+  .flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-    .item-a {
-        grid-area: header;
-        background-color: orange;
-      }
-      .item-b {
-        grid-area: main;
-        background-color: blue;
+  /* in onder to change more the flex, we have to work with the children: */
+  .flex >*{
+    /* >* all children under it */
+flex-grow: 1;
+flex-basis: 33%;
+  }
 
-      }
-      .item-c {
-        grid-area: sidebar;
-        background-color: red;
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
-      }
-      .item-d {
-        grid-area: footer;
-        background-color: green;
-
-      }
-      
-      .container {
-        display: grid;
-        grid-template-columns: 50px 50px 50px 50px;
-        grid-template-rows: 50px 50px 50px;
-        grid-template-areas: 
-          "header header header header"
-          "main main . sidebar"
-          "footer footer footer footer";
-          gap: 8px;
-          justify-items: center;
-          align-items: center;
-      }
+  }
+  
+ 
