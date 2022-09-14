@@ -1,22 +1,35 @@
 div div{
     border: solid firebrick 1px;
-  
-}
-.container{
-    display: inline-grid;
-    /* grid-template-columns: 100px 70px 125px;
-    grid-template-rows: 60px 35px;
-    or just:
-    */
-    grid-template: repeat(2, 35px) / repeat(3, 100px);
-    /* if we add more rows after, and we don't know the quantity: so 
-    for every row added, it will take the value of: */
-    /* grid-auto-rows: 45px; */
-    /* grid-auto-flow: column >>> if we use this, every new live added will be a column */
-    grid-auto-flow: column ;
-    grid-auto-columns: 50px;
-    row-gap: 12px;
-    column-gap: 34px;
-    /* could also be :  */
-    /* gap: 34px; */
-}
+  }
+    .item-a {
+        grid-area: header;
+        background-color: orange;
+      }
+      .item-b {
+        grid-area: main;
+        background-color: blue;
+
+      }
+      .item-c {
+        grid-area: sidebar;
+        background-color: red;
+
+      }
+      .item-d {
+        grid-area: footer;
+        background-color: green;
+
+      }
+      
+      .container {
+        display: grid;
+        grid-template-columns: 50px 50px 50px 50px;
+        grid-template-rows: 50px 50px 50px;
+        grid-template-areas: 
+          "header header header header"
+          "main main . sidebar"
+          "footer footer footer footer";
+          gap: 8px;
+          justify-items: center;
+          align-items: center;
+      }
