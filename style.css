@@ -1,31 +1,61 @@
-div div {
-    border: solid black 1px;
-    padding: 5px;
-}
-h1{
-    color: orangered;
-    font-weight: bolder;
-    font-size: 3rem;
-    width:400px;
-    box-shadow: 1px 3px 4px 4px red;
-}
-  
-  .flex {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  /* in onder to change more the flex, we have to work with the children: */
-  .flex >*{
-    /* >* all children under it */
-flex-grow: 1;
-flex-basis: 33%;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+.container {
+    display: inline-grid;
+    grid-template: repeat(5,40px)/  repeat(5,40px);
+    grid-auto-rows: 40px;
+    background-color: lightblue; 
   }
   
- 
+  .room {
+    border: 1px solid;
+    font-size: 50%;
+    text-align: center;
+  }
+  
+  #living-room {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  #bathroom {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 5;
+      background-color:wheat;
+      
+    }
+    
+    
+    #bedroom {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 3;
+        grid-row-end: 6;    
+        background-color: rgb(179, 169, 169);
+        
+    }
+    #kitchen {
+      grid-column-start: 5;
+      grid-column-end: 6;
+      grid-row-start: 3;
+      grid-row-end: 7;
+      background-color: aqua;
+    }
+    #closet {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    background-color: yellow;
+
+  }
+  #porch{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    background-color: yellowgreen;
+
+  }
