@@ -1,71 +1,60 @@
-.container {
-    display: inline-grid;
-    grid-template: repeat(5,40px)/  repeat(5,40px);
-    grid-auto-rows: 40px;
-    background-color: lightblue; 
+body, html {
+    height: 100%;
+    margin: 0;
   }
   
-  .room {
-    border: 1px solid;
-    font-size: 50%;
+  .container {
+    display: grid;
     text-align: center;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    gap: 22px;
+    grid-template-columns: 25% 75% ;
+    grid-template-rows:12% 12% 64% 12%;
+    grid-template-areas: 
+    "header header "
+    "sidebar nav "
+    "sidebar article "
+    "footer footer"
+   ;
   }
-
-
-  #bathroom {
-      grid-column-start: 1;
-      grid-column-end: 3;
-      grid-row-start: 3;
-      grid-row-end: 5;
-      background-color:wheat;
-      
-    }
-    
-    
-    #bedroom {
-        grid-column-start: 3;
-        grid-column-end: 5;
-        grid-row-start: 3;
-        grid-row-end: 6;    
-        background-color: rgb(179, 169, 169);
-        
-    }
-    #kitchen {
-      grid-column-start: 5;
-      grid-column-end: 6;
-      grid-row-start: 3;
-      grid-row-end: 7;
-      background-color: aqua;
-    }
-   
-  #porch{
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row: 6 / 7;
-    /* grid-row-start: 6;
-    grid-row-end: 7; */
-    background-color: yellowgreen;
-
-  }
-
-  #closet {
-    
-    grid-row-start: 5;
-    grid-row-end: 6;
-    grid-column-start: 1;
-    grid-column-end: 3;
   
-    background-color: yellow;
-
-  } /* #living-room {
-      grid-column-start: 1;
-      grid-column-end: 6;
-      grid-row-start: 1;
-      grid-row-end: 3;
-    } */
-    
-  /* grid-row-start / grid-column-start / grid-row-end / grid-column-end into one line using grid-area. */
- 
-    #living-room {
-      grid-area: 1 / 1 / 3 / 6;
-    }
+  .container div {
+    padding: 15px;
+    font-size: 32px;
+    font-family: Helvetica;
+    font-weight: bold;
+    color: white;
+    border-radius: 15px;
+  }
+  
+  .header {
+    background-color: #FFDE22;
+    grid-area: header;
+  }
+  
+  .sidebar {
+    background-color: #FF7755;
+    grid-area: sidebar;
+  }
+  
+  .nav {
+    background-color: #00DDFF;
+  }
+  
+  .article {
+    background-color: #bccbde;
+  }
+  
+  .article p {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: white;
+    text-align: left;
+  }
+  
+  .footer {
+    background-color: #393f4d;
+    grid-area: footer;
+  }
