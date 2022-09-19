@@ -1,60 +1,32 @@
-body, html {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .container {
+.grid-container {
+    resize: both;
+    overflow: auto;
     display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    /* grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 125px) repeat(3, 1fr); */
+    grid-template-rows: repeat(2, min(200px, 50%));
+  grid-template-columns: repeat(5, max(120px, 15%));
+}
+
+.grid-item {
+    
+    background-color: #444;
     text-align: center;
-    height: 100%;
-    padding: 16px;
-    box-sizing: border-box;
-    gap: 22px;
-    grid-template-columns: 25% 75% ;
-    grid-template-rows:12% 12% 64% 12%;
-    grid-template-areas: 
-    "header header "
-    "sidebar nav "
-    "sidebar article "
-    "footer footer"
-   ;
-  }
-  
-  .container div {
-    padding: 15px;
-    font-size: 32px;
-    font-family: Helvetica;
-    font-weight: bold;
-    color: white;
-    border-radius: 15px;
-  }
-  
-  .header {
-    background-color: #FFDE22;
-    grid-area: header;
-  }
-  
-  .sidebar {
-    background-color: #FF7755;
-    grid-area: sidebar;
-  }
-  
-  .nav {
-    background-color: #00DDFF;
-  }
-  
-  .article {
-    background-color: #bccbde;
-  }
-  
-  .article p {
-    font-size: 18px;
+    color: #ddd;
     font-family: sans-serif;
-    color: white;
-    text-align: left;
-  }
-  
-  .footer {
-    background-color: #393f4d;
-    grid-area: footer;
+    font-size: 1.5rem;
+    padding: 12px;
+}
+
+p {
+    margin: 12px auto 24px;
+}
+
+img {
+      /* width: min-content; */
+    height: 60px;
   }
