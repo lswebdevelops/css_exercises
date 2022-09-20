@@ -1,38 +1,43 @@
-/* The gap is 15px
-The grid has two columns
-The grid has four rows
-The grid tracks do not use static sizes (no pixels!)
-The second column is three times larger than the other
-The third row is five times larger than the others
-The rows and columns stretch wider when making the browser window bigger
-The rows and columns stretch taller when making the browser window smaller */
+/*
+    Self Check
+The container element has two columns
+The container's second column is 4 times larger than the first column
+The container element has a gap of 4px
+The header element has two columns
+The ul inside the menu element contains another grid
+The ul inside the nav element contains another grid
+The sidebar element has a gap of 50px
+The text elements in the sidebar are centered with grid
+The article element should set grid columns using repeat along with the auto-fit and minmax properties
+The article columns should have a minimum value of 250px and a maximum of 1fr unit
+The article element has a gap of 15px
+The card elements inside the article container have a height of 200px
+The header and footer span across both columns
+The sidebar only spans across the first column
+The nav and article elements only span across the second column
+ */
 
 
-
-body, html {
-    height: 100%;
+* {
     margin: 0;
+    padding: 0;
   }
   
   .container {
-        resize:both;
-    overflow: auto;
     display: grid;
-    gap: 15px;
     text-align: center;
-    height: 100%;
-    padding: 16px;
-    grid-template-rows:
-    1fr
-    1fr
-    4fr
-    1fr
-     ;
-    grid-template-columns:   
-    2fr
-    6fr 
-    ;
-  }
+    grid-template-columns: 1fr 4fr;
+    gap: 4px;
+    grid-template-areas: 
+    "header header header header header "
+    "sidebar nav nav nav nav"
+    "sidebar article article article article"
+    "sidebar  article article article article"
+    "sidebar article article article article"
+    "sidebar article article article article"
+    "foot foot foot foot foot"
+        ;
+     }
   
   .container div {
     padding: 15px;
@@ -40,26 +45,84 @@ body, html {
     font-family: Helvetica;
     font-weight: bold;
     color: white;
-    border-radius: 15px;
   }
   
   .header {
-    background-color: #FFDE22;
-    grid-column: 1 / 3;
+    grid-area: header;
+    display: grid;
+    background-color: #393f4d;
+    grid-template-columns: 1fr 4fr;
+   }
+   .logo {
+    justify-self: start;
+  }
+  .menu {
+    align-self: center;
+  }
+  
+  .menu ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+ 
+      }
+  .menu ul,
+  .menu li {
+    font-size: 16px;
+    list-style-type: none;
   }
   
   .sidebar {
+    gap: 50px;
+    grid-area: sidebar;
     background-color: #FF7755;
-    grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: min(250px);
+    grid-template-rows: repeat(4, minmax(75px, 1fr));
+    justify-content: center;
+  
+  }
+  
+  .sidebar .photo {
+    background-color: white;
+    color: black;
+    font-size: 12px;
+    font-weight: normal;
+    border-radius: 10px;
+    display: grid; 
+    align-items: center;
+  }
+  
+  
+  .sidebar .side-content {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: normal;
+    display: grid;
+    align-items: center;
   }
   
   .nav {
-    background-color: #00DDFF;
+    grid-area: nav;
+    background-color: #FF7755;
+  }
+  .nav ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+  }
+  .nav ul li {
+    font-size: 16px;
+    text-transform: uppercase;
   }
   
   .article {
+    grid-area: article;
     background-color: #bccbde;
-    overflow: auto;
+    display: grid;
+    grid-template-columns : repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
   }
   
   .article p {
@@ -67,9 +130,32 @@ body, html {
     font-family: sans-serif;
     color: white;
     text-align: left;
+    
+  }
+  
+  .article .card {
+    background-color: #FFFFFF;
+    color: black;
+    text-align: center;
+  }
+  
+  .card p {
+    color: black;
+    font-weight: normal;
+    font-size: 14px;
+  }
+  
+  .card .title {
+    font-size: 18px;
+    text-align: center;
   }
   
   .footer {
+    grid-area: foot;
     background-color: #393f4d;
-    grid-column: 1 / 3;
+  }
+  
+  .footer p {
+    font-size: 13px;
+    font-weight: normal;  
   }
