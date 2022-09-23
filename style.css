@@ -1,28 +1,24 @@
-.tracks{
-    background-color: white;
-    padding: 12px;
-}
+
 body{
-    padding: 25px;
-    background-image: url(images/pexels-photo-7135121.webp);
-    
-    background-size: 100%;
    
+    background-image: url(images/pexels-photo-7135121.webp);
+       
 }
 
-/* .hero{
-    height: 200px;
-    background-color: rgba(255, 255, 255, 0.2);
+*{
+    font-size: 34px;
+    text-align: center;
+}
+.stacked{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-.hero{
-    height: 200px;
-    background-color: rgba(255, 255, 255, 0.2);
-    display: grid;
-    justify-items: center;
-    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ 
+}
+.stacked> * {
+    width: 30%;
+    margin-bottom: 20px;
+}
+.item{
+    background-color: yellow;
 }
