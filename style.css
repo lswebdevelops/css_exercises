@@ -1,7 +1,7 @@
 .flipper{
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(50px, 2fr));
 }
 .flipper.flip{
     grid-template-columns: 1fr 1fr 1fr;
@@ -9,8 +9,10 @@
 
 .item{
     background-color: orange;
-
+    border: solid firebrick 1px;
+    text-align: center;
 }
 body{
-    background-color: firebrick;
+    background-image: url(images/pexels-photo-7135121.webp);
+
 }
