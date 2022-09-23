@@ -1,24 +1,26 @@
-
-body{
-   
-    background-image: url(images/pexels-photo-7135121.webp);
-       
+.container{
+    padding: 2rem;
 }
-
-*{
-    font-size: 34px;
-    text-align: center;
+.cell{
+    background-color: #bddab3;
+    padding: 1rem;
 }
-.stacked{
+/* if using grid */
+/* .grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1rem;
+} */
+
+/* if using flex */
+.flex{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
- 
+    grid-gap: 1rem;
 }
-.stacked> * {
-    width: 30%;
-    margin-bottom: 20px;
+.flex > .cell{
+    flex-grow: 1;
+    ;
 }
-.item{
-    background-color: yellow;
+.flex > .cell:nth-child(2){
+    flex-grow: 2;
 }
