@@ -9,21 +9,12 @@ body{
     background-size: 100%;
    
 }
-.controls{
-    margin: 200px 0;
-    /* display: flex;*/
 
-    align-items: center; 
-    display: grid;
-    grid-template-columns: repeat(3,auto) 1fr repeat(2,auto)  ;
-
-    gap: 3px;
-}
-
-.scrubber{
-    background-color: #bada55;
-    height: 10px;
-    min-width: 100px;
-    border-radius: 10px;
-    /* flex: 1; */
+.hero{
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
